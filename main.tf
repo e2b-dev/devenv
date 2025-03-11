@@ -47,7 +47,8 @@ resource "google_compute_address" "external_ip" {
 # Create an instance template
 resource "google_compute_instance_template" "vm_template" {
   name         = "terraform-instance-template"
-  machine_type = "e2-medium"
+  machine_type = "e2-medium" # $25 / month
+  # machine_type = "e2-standard-4" # $100 / month
   tags         = ["web", "dev"]
 
   disk {
